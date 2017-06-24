@@ -1,0 +1,25 @@
+# depslib dependency file v1.0
+1498313113 source:c:\users\cyndi\desktop\carpetas\c++\segundoparcial\bicola.cpp
+	"Bicola.hpp"
+	"Node.hpp"
+	<iostream>
+	<string>
+
+1498313113 c:\users\cyndi\desktop\carpetas\c++\segundoparcial\bicola.hpp
+	"Node.hpp"
+	<string>
+
+1498275285 c:\users\cyndi\desktop\carpetas\c++\segundoparcial\node.hpp
+	<string>
+
+1498310524 source:c:\users\cyndi\desktop\carpetas\c++\segundoparcial\main.cpp
+	<iostream>
+	<stdlib.h>
+	"Node.hpp"
+	"Bicola.hpp"
+
+1498310650 source:c:\users\cyndi\desktop\carpetas\c++\segundoparcial\node.cpp
+	"Node.hpp"
+	<string>
+	<iostream>
+

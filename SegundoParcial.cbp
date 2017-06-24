@@ -32,6 +32,10 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Bicola.cpp" />
+		<Unit filename="Bicola.hpp" />
+		<Unit filename="Node.cpp" />
+		<Unit filename="Node.hpp" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />
