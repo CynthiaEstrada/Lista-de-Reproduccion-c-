@@ -21,8 +21,7 @@ int main()
     bicola.Push("Oasis", "Wonderwall");
 
 
-    node *p = bicola.frente();
-    bicola.Mostrar(p);
+    bicola.Mostrar(bicola.p);
 
     char sele;
 
@@ -39,6 +38,7 @@ int main()
             cout << "[2] Ordenar por Autor" << endl;
             cout << "[x] Terminar" << endl;
             cin >> sele;
+            bicola.bandera = false;
             system("cls");
 
             switch(sele){
@@ -47,14 +47,14 @@ int main()
             if(!bicola.bandera){
             cout << "** Aleatorio On **" << endl;
             cout << "" << endl;
-            bicola.Mostrar(p);
+            bicola.Mostrar(bicola.p);
             bicola.bandera = true;
             break;
             }
             else{
                 cout << "** Aleatorio off **" << endl;
                 cout << "" << endl;
-                bicola.Mostrar(p);
+                bicola.Mostrar(bicola.p);
                 bicola.bandera = false;
             }
 
@@ -63,11 +63,11 @@ int main()
 
             }
             else{
-
-            }
+            //bicola.Siguiente(p);
+            bicola.Siguiente(bicola.p);
+            //bicola.Mostrar(p);
             break;
-
-        bicola.Mostrar(p);
+            }
     }
 
 

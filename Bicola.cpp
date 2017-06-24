@@ -5,6 +5,7 @@
 
 using namespace std;
 
+
     void Bicola::Push(string x, string y){
 
         node *nuevo = new node(x, y);
@@ -49,9 +50,14 @@ using namespace std;
         cout << " ";
     }
 
-    void Bicola::Siguiente(){
+    node Bicola::Siguiente(node *q){
 
-
+    q->infoCancion(q);
+    q = q ->_siguiente;
+    q->infoCancion(q);
+    p = q;
+    //Mostrar(q);
+    return *p;
 
     }
 

@@ -14,6 +14,7 @@ int s;
 public:
 
     bool bandera;
+    node *p = _frente;
 
     Bicola(){s = 0; _frente = NULL; _final = NULL;}
 
@@ -21,7 +22,7 @@ public:
     void Pop(node *);
     void Mostrar(node *);
     void SiguienteAleatoria(node *);
-    void Siguiente(node *);
+    node Siguiente(node *);
     void AnteriorAleatoria(node *);
     void Anterior(node *);
     int size(){return s;}
