@@ -14,7 +14,7 @@ int s;
 public:
 
     bool bandera;
-    node *p = _frente;
+    node *p;
 
     Bicola(){s = 0; _frente = NULL; _final = NULL;}
 

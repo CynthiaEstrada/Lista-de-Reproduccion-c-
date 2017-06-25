@@ -20,7 +20,7 @@ int main()
     bicola.Push("Radiohead", "Creep");
     bicola.Push("Oasis", "Wonderwall");
 
-
+    bicola.p = bicola.frente();
     bicola.Mostrar(bicola.p);
 
     char sele;
@@ -63,9 +63,16 @@ int main()
 
             }
             else{
-            //bicola.Siguiente(p);
             bicola.Siguiente(bicola.p);
-            //bicola.Mostrar(p);
+            break;
+            }
+
+        case 'b':
+            if(bicola.bandera){
+
+            }
+            else{
+            bicola.Anterior(bicola.p);
             break;
             }
     }

@@ -51,13 +51,37 @@ using namespace std;
     }
 
     node Bicola::Siguiente(node *q){
+    node *proximo = q ->_siguiente;
 
-    q->infoCancion(q);
+    if(proximo != NULL){
     q = q ->_siguiente;
-    q->infoCancion(q);
     p = q;
-    //Mostrar(q);
+    Mostrar(q);
+    }
+    else{
+        q = _frente;
+        p = q;
+        Mostrar(q);
+        return *p;
+    }
     return *p;
+
+    }
+
+    void Bicola::Anterior(node *q){
+
+            node *proximo = q ->_anterior;
+
+    if(proximo != NULL){
+    q = q ->_anterior;
+    p = q;
+    Mostrar(q);
+    }
+    else{
+        q = _final;
+        p = q;
+        Mostrar(q);
+         }
 
     }
 
