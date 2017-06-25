@@ -1,5 +1,6 @@
 #include <iostream>
-#include <stdlib.h>
+#include <cstdlib>
+#include <string>
 #include "Node.hpp"
 #include "Bicola.hpp"
 
@@ -7,6 +8,14 @@ using namespace std;
 
 int main()
 {
+    /*std::string name;
+
+  std::cout << "Please, enter your full name: ";
+  std::getline (std::cin,name);
+  std::cout << "Hello, " << name << "!\n";*/
+    string ar;
+    string can;
+
     Bicola bicola;
 
     bicola.Push("Nina Simone", "Feeling Good");
@@ -24,57 +33,88 @@ int main()
     bicola.Mostrar(bicola.p);
 
     char sele;
-
+    bicola.bandera = false;
 
 
     do{
-            cout <<" "<< endl;
-            cout << "[R] Modo Aleatorio" << endl;
-            cout << "[F] Cancion Siguiente"<< endl;
-            cout << "[B] Cancion Anterior" << endl;
-            cout << "[A] Agregar Cancion" << endl;
-            cout << "[E] Eliminar Cancion" << endl;
-            cout << "[1] Ordenar por cancion" << endl;
-            cout << "[2] Ordenar por Autor" << endl;
-            cout << "[x] Terminar" << endl;
+            cout <<" "<< "\n";
+            cout << "[R] Modo Aleatorio" << "\n";
+            cout << "[F] Cancion Siguiente"<< "\n";
+            cout << "[B] Cancion Anterior" << "\n";
+            cout << "[A] Agregar Cancion" << "\n";
+            cout << "[E] Eliminar Cancion" << "\n";
+            cout << "[1] Ordenar por cancion" << "\n";
+            cout << "[2] Ordenar por Autor" << "\n";
+            cout << "[x] Terminar" << "\n";
             cin >> sele;
-            bicola.bandera = false;
             system("cls");
 
             switch(sele){
 
         case 'r':
             if(!bicola.bandera){
-            cout << "** Aleatorio On **" << endl;
-            cout << "" << endl;
+            cout << "** Aleatorio On **" << "\n";
+            cout << "" << "\n";
             bicola.Mostrar(bicola.p);
             bicola.bandera = true;
             break;
             }
             else{
-                cout << "** Aleatorio off **" << endl;
-                cout << "" << endl;
+                cout << "** Aleatorio off **" << "\n";
+                cout << "" << "\n";
                 bicola.Mostrar(bicola.p);
                 bicola.bandera = false;
+                break;
             }
 
         case 'f':
             if(bicola.bandera){
-
+            cout << "** Aleatorio On **" << "\n";
+            cout << "" << "\n";
+            bicola.SiguienteAleatoria(bicola.p);
+            bicola.bandera = true;
+            break;
             }
             else{
+            cout << "** Aleatorio off **" << "\n";
+            cout << "" << "\n";
             bicola.Siguiente(bicola.p);
             break;
             }
 
         case 'b':
             if(bicola.bandera){
-
+            cout << "** Aleatorio On **" << "\n";
+            cout << "" << "\n";
+            bicola.AnteriorAleatoria(bicola.p);
+            break;
             }
             else{
+            cout << "** Aleatorio off **" << "\n";
+            cout << "" << "\n";
+
             bicola.Anterior(bicola.p);
             break;
             }
+
+        case 'a':
+
+            cout << "Artista: " << "\n";//<< endl;
+            getline (cin,ar);
+            getline (cin,ar);
+            cout << "Cancion: " << "\n";
+            getline (cin, can);
+            bicola.Push(ar, can);
+            bicola.Mostrar(bicola.p);
+            break;
+
+
+        case 'e':
+
+            bicola.Pop(bicola.p);
+            bicola.Mostrar(bicola.p);
+            break;
+
     }
 
 
@@ -84,3 +124,4 @@ int main()
 
 return 0;
 }
+

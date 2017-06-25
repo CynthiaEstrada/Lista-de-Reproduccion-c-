@@ -1,9 +1,12 @@
 #include "Bicola.hpp"
 #include "Node.hpp"
 #include <iostream>
+#include <cstdlib>
 #include <string>
+#include <time.h>
 
 using namespace std;
+
 
 
     void Bicola::Push(string x, string y){
@@ -19,18 +22,42 @@ using namespace std;
             nuevo ->_anterior = _final;
             _final ->_siguiente = nuevo;
             _final = nuevo;
-            _final ->_siguiente = _frente ->_anterior;
-            _frente ->_anterior = _final ->_siguiente;
         s++;
         }
 
     }
 
-    void Bicola::Pop(node *p){
 
+    void Bicola::Pop(node *_a){
 
+        node *aux, *aux2, *aux3;
+        aux = _a;
+
+        if(_a == _frente){
+            _frente = _frente ->_siguiente;
+            _a = _frente;
+            p =_a;
+            s--;
+        }
+        if(_a == _final){
+            _final = _final -> _anterior;
+            _a = _frente;
+            p = _a;
+            s--;
+        }
+    if(_a != _frente && _a != _final){
+        aux2 = _a->_anterior;
+        aux3 = _a ->_siguiente;
+
+        aux2->_siguiente = _a ->_siguiente;
+        aux3->_anterior = _a->_anterior;
+        _a = aux3;
+        p = _a;
+        s--;
 
     }
+    }
+
     void Bicola::Mostrar(node *p){
 
 
@@ -82,6 +109,48 @@ using namespace std;
         p = q;
         Mostrar(q);
          }
+
+    }
+
+    void Bicola::SiguienteAleatoria(node *q){
+
+    node *proximo;
+    srand(time(NULL));
+    int x = rand()% (s - 1);
+    for(int i = 0; i <= x; i++){
+    proximo = q ->_siguiente;
+    if(proximo != NULL){
+    q = q ->_siguiente;
+    p = q;
+    }
+    else{
+        q = _frente;
+        p = q;
+         }
+
+    }
+    Mostrar(p);
+
+    }
+
+    void Bicola::AnteriorAleatoria(node *q){
+    node *proximo;
+    srand(time(NULL));
+    int x = rand()% (s - 1);
+    for(int i = 0; i <= x; i++){
+    proximo = q ->_anterior;
+    if(proximo != NULL){
+    q = q ->_anterior;
+    p = q;
+    }
+    else{
+        q = _final;
+        p = q;
+         }
+
+    }
+    Mostrar(p);
+
 
     }
 
