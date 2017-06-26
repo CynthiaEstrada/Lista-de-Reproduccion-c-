@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1498439644 source:c:\users\cyndi\desktop\carpetas\c++\segundoparcial\bicola.cpp
+1498441582 source:c:\users\cyndi\desktop\carpetas\c++\segundoparcial\bicola.cpp
 	"Bicola.hpp"
 	"Node.hpp"
 	<iostream>

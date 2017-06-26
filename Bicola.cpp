@@ -159,7 +159,7 @@ using namespace std;
 
     }
 
-    void Bicola::OrdenarPorCancion(){
+    void Bicola::OrdenarPorArtista(){
 
     node *aux, *aux2;
     string a, b;
@@ -173,20 +173,17 @@ using namespace std;
         b = _frente->_siguiente->_artista;
                 if(a.substr(0) > b.substr(0)){
             swap(aux, aux2);
-            i = 0;
-            i++;
         }
         bandera = false;
-                aux = aux2;
+        aux = aux2;
         aux2 = aux2 ->_siguiente;
         a = aux ->_artista;
         b= aux2 ->_artista;
-
+        i++;
         }else{
 
         if(a.substr(0) > b.substr(0)){
             swap(aux, aux2);
-        i++;
         }
         aux = aux2;
         a = aux ->_artista;
@@ -199,29 +196,46 @@ using namespace std;
         }
         }
     }
+    }
+    void Bicola::OrdenarPorCancion(){
 
-    //swap(aux, aux2);
-    //a = _frente->_siguiente->_cancion
-        /*node *aux, *aux2, *aux3, *_a;
-    if( i == 1){
-        _a = _frente;
-        aux = _a ->_siguiente;
-        aux2 = aux->_siguiente;
-        _frente = aux;
-        aux ->_anterior = NULL;
-        _a ->_siguiente = aux2;
-        _a ->_anterior = aux;
-        aux ->_siguiente = _a;
-        aux2 ->_anterior = _a;
+    node *aux, *aux2;
+    string a, b;
+    bool bandera = true;
+
+    for(int i = 1; i <= s;){
+        if(bandera){
+        aux = _frente;
+        aux2 = _frente ->_siguiente;
+        a = _frente ->_cancion;
+        b = _frente->_siguiente->_cancion;
+                if(a.substr(0) > b.substr(0)){
+            swap(aux, aux2);
+        }
+        bandera = false;
+        aux = aux2;
+        aux2 = aux2 ->_siguiente;
+        a = aux ->_cancion;
+        b= aux2 ->_cancion;
+        i++;
+        }else{
+
+        if(a.substr(0) > b.substr(0)){
+            swap(aux, aux2);
+        }
+        aux = aux2;
+        a = aux ->_cancion;
+        if(aux == _final){
+            bandera = true;
+        }else{
+
+        aux2 = aux2 ->_siguiente;
+        b= aux2 ->_cancion;
+        }
+        }
     }
-    aux = _a ->_siguiente;
-    aux ->_anterior = _a ->_anterior;
-    _a ->_siguiente = aux ->_siguiente;
-    _a ->_anterior = aux;
-    aux ->_siguiente = _a;
-    aux3  ->_siguiente = aux;
-    aux2 ->_anterior = _a;*/
     }
+
 
     void Bicola::swap(node *_a, node *_b){
 

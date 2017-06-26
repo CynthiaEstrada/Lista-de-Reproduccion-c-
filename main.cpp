@@ -121,6 +121,10 @@ int main()
             bicola.Mostrar(bicola.p);
             break;
 
+        case'2':
+            bicola.OrdenarPorArtista();
+            bicola.Mostrar(bicola.p);
+            break;
     }
 
 }
