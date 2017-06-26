@@ -3,13 +3,21 @@
 #include <iostream>
 #include <cstdlib>
 #include <string>
+#include <cstring>
 #include <time.h>
+#include <ctype.h>
 
 using namespace std;
 
 
 
     void Bicola::Push(string x, string y){
+        char *letra = strdup(x.c_str());
+        letra[0] = toupper(letra[0]);
+        x = letra;
+        char *letra2 = strdup(y.c_str());
+        letra2[0] = toupper(letra2[0]);
+        y = letra2;
 
         node *nuevo = new node(x, y);
 
