@@ -1,13 +1,15 @@
 # depslib dependency file v1.0
-1498442788 source:c:\users\cyndi\desktop\carpetas\c++\segundoparcial\bicola.cpp
+1498454121 source:c:\users\cyndi\desktop\carpetas\c++\segundoparcial\bicola.cpp
 	"Bicola.hpp"
 	"Node.hpp"
 	<iostream>
 	<cstdlib>
 	<string>
+	<cstring>
 	<time.h>
+	<ctype.h>
 
-1498442769 c:\users\cyndi\desktop\carpetas\c++\segundoparcial\bicola.hpp
+1498448914 c:\users\cyndi\desktop\carpetas\c++\segundoparcial\bicola.hpp
 	"Node.hpp"
 	<string>
 
@@ -19,7 +21,7 @@
 	<string>
 	<iostream>
 
-1498442769 source:c:\users\cyndi\desktop\carpetas\c++\segundoparcial\main.cpp
+1498454079 source:c:\users\cyndi\desktop\carpetas\c++\segundoparcial\main.cpp
 	<iostream>
 	<cstdlib>
 	<string>

@@ -256,3 +256,9 @@ using namespace std;
         _a ->_cancion = _b->_cancion;
         _b ->_cancion = aux2;
     }
+
+    Bicola::~Bicola(){
+        delete _frente;
+        delete  _final;
+        cout << "Se Termino";
+    }

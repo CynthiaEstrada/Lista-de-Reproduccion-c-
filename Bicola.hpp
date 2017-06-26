@@ -34,6 +34,9 @@ public:
     node *frente(){return _frente;}
     node *final(){return _final;}
 
+    ~Bicola();
 
-};
+
+}
+;
 #endif // __BICOLA_HPP__

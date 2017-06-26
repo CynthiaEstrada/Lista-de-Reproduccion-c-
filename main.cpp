@@ -8,16 +8,11 @@ using namespace std;
 
 int main()
 {
-    /*std::string name;
 
-  std::cout << "Please, enter your full name: ";
-  std::getline (std::cin,name);
-  std::cout << "Hello, " << name << "!\n";*/
     string ar;
     string can;
 
     Bicola bicola;
-
     bicola.Push("Nina Simone", "Feeling Good");
     bicola.Push("Cafe Tacvba", "Eres");
     bicola.Push("Foo Fighters", "Run");
@@ -98,13 +93,15 @@ int main()
             }
 
         case 'a':
-
+            bicola.Mostrar(bicola.p);
+            cout << "\n";
             cout << "Artista: " << "\n";//<< endl;
             getline (cin,ar);
             getline (cin,ar);
             cout << "Cancion: " << "\n";
             getline (cin, can);
             bicola.Push(ar, can);
+            system("cls");
             bicola.Mostrar(bicola.p);
             break;
 
