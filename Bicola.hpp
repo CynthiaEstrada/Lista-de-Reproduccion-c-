@@ -25,6 +25,8 @@ public:
     node Siguiente(node *);
     void AnteriorAleatoria(node *);
     void Anterior(node *);
+    void OrdenarPorCancion();
+    void swap(node*, node*);
     int size(){return s;}
     bool Vacia(){return s == 0 ? true : false;}
 

@@ -115,9 +115,13 @@ int main()
             bicola.Mostrar(bicola.p);
             break;
 
+        case '1':
+
+            bicola.OrdenarPorCancion();
+            bicola.Mostrar(bicola.p);
+            break;
+
     }
-
-
 
 }
  while(sele != 'x');

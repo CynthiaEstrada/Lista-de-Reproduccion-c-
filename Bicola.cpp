@@ -159,3 +159,78 @@ using namespace std;
 
     }
 
+    void Bicola::OrdenarPorCancion(){
+
+    node *aux, *aux2;
+    string a, b;
+    bool bandera = true;
+
+    for(int i = 1; i <= s;){
+        if(bandera){
+        aux = _frente;
+        aux2 = _frente ->_siguiente;
+        a = _frente ->_artista;
+        b = _frente->_siguiente->_artista;
+                if(a.substr(0) > b.substr(0)){
+            swap(aux, aux2);
+            i = 0;
+            i++;
+        }
+        bandera = false;
+                aux = aux2;
+        aux2 = aux2 ->_siguiente;
+        a = aux ->_artista;
+        b= aux2 ->_artista;
+
+        }else{
+
+        if(a.substr(0) > b.substr(0)){
+            swap(aux, aux2);
+        i++;
+        }
+        aux = aux2;
+        a = aux ->_artista;
+        if(aux == _final){
+            bandera = true;
+        }else{
+
+        aux2 = aux2 ->_siguiente;
+        b= aux2 ->_artista;
+        }
+        }
+    }
+
+    //swap(aux, aux2);
+    //a = _frente->_siguiente->_cancion
+        /*node *aux, *aux2, *aux3, *_a;
+    if( i == 1){
+        _a = _frente;
+        aux = _a ->_siguiente;
+        aux2 = aux->_siguiente;
+        _frente = aux;
+        aux ->_anterior = NULL;
+        _a ->_siguiente = aux2;
+        _a ->_anterior = aux;
+        aux ->_siguiente = _a;
+        aux2 ->_anterior = _a;
+    }
+    aux = _a ->_siguiente;
+    aux ->_anterior = _a ->_anterior;
+    _a ->_siguiente = aux ->_siguiente;
+    _a ->_anterior = aux;
+    aux ->_siguiente = _a;
+    aux3  ->_siguiente = aux;
+    aux2 ->_anterior = _a;*/
+    }
+
+    void Bicola::swap(node *_a, node *_b){
+
+        string aux1, aux2;
+
+        aux1 = _a->_artista;
+        _a->_artista = _b->_artista;
+        _b ->_artista = aux1;
+        aux2 = _a->_cancion;
+        _a ->_cancion = _b->_cancion;
+        _b ->_cancion = aux2;
+    }
