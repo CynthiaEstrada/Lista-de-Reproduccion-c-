@@ -36,13 +36,17 @@ using namespace std;
         if(_a == _frente){
             _frente = _frente ->_siguiente;
             _a = _frente;
+            _a ->_anterior = NULL;
             p =_a;
+            delete aux;
             s--;
         }
         if(_a == _final){
             _final = _final -> _anterior;
             _a = _frente;
+            _final ->_siguiente = NULL;
             p = _a;
+            delete aux;
             s--;
         }
     if(_a != _frente && _a != _final){
@@ -53,6 +57,7 @@ using namespace std;
         aux3->_anterior = _a->_anterior;
         _a = aux3;
         p = _a;
+        delete aux;
         s--;
 
     }
